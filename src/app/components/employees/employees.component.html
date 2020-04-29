@@ -1,0 +1,39 @@
+
+<div class="container">
+    <div class="alert alert-warning" *ngIf='errorMessage'>{{errorMessage}}</div>
+    <br/><br/>
+    Employee id
+    <br/><br/>
+    <input [(ngModel)]="employeeId" class="form-control" type="text" maxlength="3">
+    <br/>
+    <button (click)="getEmployee()" type="submit" class="btn btn-success">Get employees</button>
+    <br/>
+    <br/>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Contract type</th>
+                <th>Role</th>
+                <th>Role description</th>
+                <th>Hourly salary</th>
+                <th>Monthly salary</th>
+                <th>Annual salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.contractTypeName}}</td>
+                <td>{{employee.roleName}}</td>
+                <td>{{employee.roleDescription}}</td>
+                <td>{{employee.hourlySalary}}</td>
+                <td>{{employee.monthlySalary}}</td>
+                <td>{{employee.annualSalaryValue}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
